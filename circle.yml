@@ -14,3 +14,4 @@ test:
     - echo "No tests."
     - pwd
     - ./build.sh
+    - tree
