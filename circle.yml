@@ -1,0 +1,19 @@
+
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - apt-get install -y tree
+  override:
+    - docker info
+
+test:
+  override:
+    - echo "No tests."
+
+build:
+  override:
+    - pwd
+    - ./build.sh
