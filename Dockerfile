@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM ubuntu:14.04
 RUN apt-get install -y tree
 
 COPY build.sh /
