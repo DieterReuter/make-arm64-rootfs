@@ -11,13 +11,13 @@ wget "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_
 
 # Unpack the rootfs with user=root to keep the original file attributes
 mkdir -p ./rootfs
-sudo tar xfz ${IMAGE_FILE} -C ./rootfs
+tar xfz ${IMAGE_FILE} -C ./rootfs
 
 # Pack the new rootfs as a compressed tarball
-sudo tar cfz ./rootfs.tar.gz -C ./rootfs
+tar cfz ./rootfs.tar.gz -C ./rootfs
 
 # Clean up
-sudo rm -fr ./rootfs
+rm -fr ./rootfs
 
 # Show infos
 pwd
