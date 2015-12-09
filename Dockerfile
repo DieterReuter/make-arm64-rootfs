@@ -1,6 +1,7 @@
 FROM ubuntu:15.10
-RUN apt-get update && \
-    apt-get install -y tree
+RUN apt-get update
+RUN apt-get install -y tree
+RUN apt-get install -y wget
 
 COPY build.sh /
 RUN mkdir /data
