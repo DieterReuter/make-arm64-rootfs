@@ -5,7 +5,7 @@ machine:
 
 dependencies:
   pre:
-    - sudo apt-get install -y tree
+#    - sudo apt-get install -y tree
   override:
     - docker version
     - docker info
