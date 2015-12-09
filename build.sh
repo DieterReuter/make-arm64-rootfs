@@ -11,7 +11,7 @@ IMAGE_FILE="ubuntu-core-${UBUNTU_RELEASE}-core-${UBUNTU_ARCH}.tar.gz"
 # Download recent Ubuntu rootfs
 if [ ! -f "${IMAGE_FILE}" ]; then
   ###wget -q "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
-  wget -q "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
+  wget -q "http://cdimage.ubuntu.com/ubuntu-core/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
 fi
 
 # Unpack the rootfs with user=root to keep the original file attributes
