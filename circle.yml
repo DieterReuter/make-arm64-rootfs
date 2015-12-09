@@ -4,13 +4,12 @@ machine:
   pre:
     - curl -sSLO https://get.docker.com/builds/Linux/x86_64/docker-latest
     - chmod +x docker-latest
-    - sudo mv docker-latest /usr/bin/docker
+#    - sudo cp docker-latest /usr/bin/docker
   services:
     - docker
 
 dependencies:
   pre:
-    - which docker
     - docker version
     - docker info
   post:
