@@ -5,15 +5,12 @@ machine:
 
 dependencies:
   pre:
-    - apt-get install -y tree
+    - sudo apt-get install -y tree
   override:
     - docker info
 
 test:
   override:
     - echo "No tests."
-
-build:
-  override:
     - pwd
     - ./build.sh
