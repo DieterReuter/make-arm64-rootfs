@@ -1,7 +1,4 @@
 #!/bin/bash -e
-set -x 
-
-uname -a
 
 UBUNTU_ARCH="arm64"
 UBUNTU_RELEASE="15.10"
@@ -18,6 +15,8 @@ fi
 rm -fr ./rootfs
 mkdir -p ./rootfs
 tar -xzf ${IMAGE_FILE} -C ./rootfs/ || true
+
+# Now change and add contents
 
 # Pack the new rootfs as a compressed tarball
 pushd ./rootfs
