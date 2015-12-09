@@ -5,10 +5,12 @@ uname -a
 
 UBUNTU_ARCH="arm64"
 UBUNTU_RELEASE="15.10"
-IMAGE_FILE="ubuntu-${UBUNTU_RELEASE}-server-cloudimg-${UBUNTU_ARCH}-root.tar.gz"
+###IMAGE_FILE="ubuntu-${UBUNTU_RELEASE}-server-cloudimg-${UBUNTU_ARCH}-root.tar.gz"
+IMAGE_FILE="ubuntu-core-${UBUNTU_RELEASE}-core-${UBUNTU_ARCH}.tar.gz"
 
-# Download recent Cloud rootfs
+# Download recent Ubuntu rootfs
 if [ ! -f "${IMAGE_FILE}" ]; then
+  ###wget -q "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
   wget -q "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
 fi
 
