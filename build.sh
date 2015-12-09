@@ -29,7 +29,6 @@ rm -fr ./rootfs
 # Show infos
 tar -tvf rootfs.tar.gz | head -25
 pwd
-tree
 ls -al
 
 echo "OK"
