@@ -12,5 +12,5 @@ dependencies:
 
 test:
   override:
-    - docker run --rm -ti builder tar cf - rootfs.tar.gz | tar xvf -
+    - docker run --rm -v $(pwd):/out builder cp rootfs.tar.gz /out/
     - mv rootfs.tar.gz $CIRCLE_ARTIFACTS/
