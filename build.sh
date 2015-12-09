@@ -13,17 +13,17 @@ if [ ! -f "${IMAGE_FILE}" ]; then
 fi
 
 # Unpack the rootfs with user=root to keep the original file attributes
-sudo rm -fr ./rootfs
+rm -fr ./rootfs
 mkdir -p ./rootfs
-sudo tar -xzf ${IMAGE_FILE} -C ./rootfs/ || true
+tar -xzf ${IMAGE_FILE} -C ./rootfs/ || true
 
 # Pack the new rootfs as a compressed tarball
 pushd ./rootfs
-sudo tar -czf ../rootfs.tar.gz * || true
+tar -czf ../rootfs.tar.gz * || true
 popd
 
 # Clean up
-sudo rm -fr ./rootfs
+rm -fr ./rootfs
 
 # Show infos
 tar -tvf rootfs.tar.gz | head -25
