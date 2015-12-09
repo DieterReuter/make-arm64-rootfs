@@ -5,12 +5,12 @@ machine:
 
 dependencies:
   pre:
-    - sudo apt-get install -y tree
-  post:
     - docker version
     - docker info
+  post:
+    - docker build -t builder .
 
 test:
   override:
-    - ./build.sh
-    - cp rootfs.tar.gz $CIRCLE_ARTIFACTS/
+    - docker run --rm -ti builder tar cf - rootfs.tar.gz | tar xvf -
+    - mv rootfs.tar.gz $CIRCLE_ARTIFACTS/
