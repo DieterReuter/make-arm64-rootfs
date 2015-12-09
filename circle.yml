@@ -13,6 +13,4 @@ dependencies:
 test:
   override:
     - echo "No tests."
-    - pwd
     - ./build.sh
-    - tree
