@@ -9,7 +9,7 @@ IMAGE_FILE="ubuntu-${UBUNTU_RELEASE}-server-cloudimg-${UBUNTU_ARCH}-root.tar.gz"
 
 # Download recent Cloud rootfs
 if [ ! -f "${IMAGE_FILE}" ]; then
-  wget "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
+  wget -q "http://cloud-images.ubuntu.com/releases/${UBUNTU_RELEASE}/release/${IMAGE_FILE}"
 fi
 
 # Unpack the rootfs with user=root to keep the original file attributes
@@ -30,6 +30,5 @@ tar -tvf rootfs.tar.gz | head -25
 pwd
 tree
 ls -al
-file *.tar.gz
 
 echo "OK"
